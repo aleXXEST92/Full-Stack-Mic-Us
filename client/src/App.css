@@ -1,38 +1,157 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+ }
+ 
+ .home__background-image {
+   position: fixed;  
+   width: 100vw;
+   height: 100vh;
+   background-image: url(https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+   background-size: cover;
+   opacity: 0.65;
+ }
+ 
+ .nav {
+   height:110px;
+   width:100%;
+   background-color: white;
+   z-index: 100;
+ }
+ 
+ .list {
+   margin: 25px;
+   list-style: none;
+ }
+ 
+ .slide {
+   display: inline;
+ }
+ 
+ .search {
+   display: inline;
+   position: fixed;
+   top: 250px;
+   left: 10%;
+   display: flex;
+   flex-direction: column;
+ }
+ 
+ .searchbar {
+   width:50%;
+   top:400px;
+   position:fixed;
+   display: flex;
+ }
+ 
+ .promo {
+   display: inline;
+   position: fixed;
+   top: 175px;
+   right: 10%;
+ }
+ 
+ .signup-button {
+   position: fixed;
+   bottom:50px;
+   right: 120px;
+ }
+ 
+ .signup__background-image {
+   position: fixed;  
+   width: 100vw;
+   height: 85vh;
+   background-image: url(https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);
+   background-size: cover;
+   background-position: bottom;
+   opacity: 0.75;
+ }
+ 
+ .signup-container {
+   position: fixed;
+   left: 160px;
+   padding:45px;
+   padding-top: 125px;
+   width: 70%;
+ }
+ 
+ .signup-header {
+   text-align: center;
+   padding-top: 10px;
+   padding-bottom: 20px;
+   opacity: 0.99;
+ }
+ 
+ .style {
+   text-align: center;
+   font-size: 18px;
+   padding: 10px;
+   background-color: white;
+ }
+ 
+ .wrapper {
+   display: flex;
+   flex-direction: column;
+   background-color: white;
+ }
+ 
+ #text {
+   display: flex;
+   text-align: center;
+ }
+ 
+ .register-button {
+   width:25%;
+   position: fixed;
+   top: 550px;
+   left:415px;
+ }
+ 
+ @media  (max-width: 700px) {
+   .promo {
+   display: none;
+   }
+ 
+   .searchbar {
+     width:75%;
+     top:400px;
+     position:fixed;
+     display: flex;
+   }
+ 
+   .hidden {
+     position: fixed;
+     top: 475px;
+     right:145px;
+   }
+ 
+   .signup-header {
+     padding-top: 50px;
+   }
+ 
+   .signup-button {
+     width:25%;
+     position: fixed;
+     top: 515px;
+     left:175px;
+   }
+ 
+   .signup-container {
+     position: fixed;
+     left: 25px;
+     padding:35px;
+     width: 90%;
+   }
+ 
+   .register-button {
+     width:25%;
+     position: fixed;
+     top: 515px;
+     left:175px;
+   }
+ }
+ 
+ @media  (min-width: 700px) {
+   .hidden {
+     display: none;
+   }
+ }
