@@ -2,25 +2,25 @@ export default {
   artist: [
     { 
             id: 1,
-            Name:"Ekoh",
-            Email: "1234",
-            Type:"Solo",
-            Genre:"Hip Hop"
+            name:"Ekoh",
+            email: "1234",
+            type:"Solo",
+            genre:"Hip Hop"
     
     },
         {
             id: 2,
-            Name:"Dolla",
-            Email: "1234",
-            Type:"Solo",
-            Genre:"Hip Hop"
+            name:"Dolla",
+            email: "1234",
+            type:"Solo",
+            genre:"Hip Hop"
     },
         {
             id: 3,
-            Artist:"Rook",
-            Email: "1234",
-            Type:"Band",
-            Genre:"Alternative"
+            artist:"Rook",
+            email: "1234",
+            type:"Band",
+            genre:"Alternative"
     
     }
     ]

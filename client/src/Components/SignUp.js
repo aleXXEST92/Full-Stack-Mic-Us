@@ -16,6 +16,10 @@ class SignUp extends Component {
   }
   }
 
+componentDidMount() {
+  this.props.addArtist();
+}
+
 artistName = event => {
   const newArtist = (event.target.value);
   this.setState({name:newArtist})
