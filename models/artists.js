@@ -4,19 +4,19 @@ const Schema = mongoose.Schema;
 const artistSchema = new Schema({
     name: {
       type: String,
-      required: true
+      // required: true
     },
     email: {
         type: String,
-        required: true
+        // required: true
     },
     type: {
         type: String,
-        required: true
+        // required: true
       },
     genre: {
         type: String,
-        required: true
+        // required: true
     },
 })
 

@@ -1,31 +1,36 @@
 export const addArtist = (artist) => {
     console.log(artist, "artists")
-    return function(dispatch) {
-        fetch("/", {
-            method: 'POST', // *GET, POST, PUT, DELETE, etc.
-            mode: 'cors', // no-cors, *cors, same-origin
-            credentials: 'same-origin', // include, *same-origin, omit
-            headers: {
-              'Content-Type': 'application/json'
-              // 'Content-Type': 'application/x-www-form-urlencoded',
-            },  body: JSON.stringify(artist) // body data type must match "Content-Type" header
-        })
-          .then(response => {
-            response.json().then(addArtist => {
-              dispatch(
-                artistPosted(addArtist)
-              )
-            })
-          })
-          .catch(err => console.error('Caught error: ', err))
-      }
+    return {
+        type: 'ADD_ARTIST',
+        value: artist
     }
+}
 
-    export const artistPosted = (newArtist) => {
-        return{
-            type:"ARTIST_POST",
-            value:newArtist
-        }
-    }
-
+// export const addArtist = (artist) => {
+//     console.log(artist)
+//     return (dispatch) => {
+//         fetch("http://localhost:5000/api/artists", {
+//             method:"post",
+//             headers: {    
+//                 'Accept': 'application/json',
+//                 'Content-Type': 'application/json',
+//                 'Access-Control-Allow-Origin': '*' },
+//             mode:"cors",
+//             cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+//             credentials: 'same-origin',
+//             body:JSON.stringify({
+//                 artist:artist
+//             })
+//         })
+//         .then(res => res.json())
+//         .then(response => {
+//             console.log("response", response)
+//             const action={
+//                 type: 'ADD_ARTIST',
+//                 value: response
+//             }
+//             dispatch(action)
+//         })
+//     }
+// }
 

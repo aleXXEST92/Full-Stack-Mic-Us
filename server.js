@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const path = require('path')
-const items = require('./routes/api/artists')
+const artists = require('./routes/api/artists')
 
 const app = express();
 
@@ -16,7 +16,7 @@ mongoose.connect(db,{useUnifiedTopology:true, useNewUrlParser:true})
 .catch(err => console.log("error"));
 
 //Use Routes
-app.use("/api/artists", items)
+app.use("/api/artists", artists)
 
 if(process.env.NODE_ENV === "production") {
     app.use(express.static(client/build))

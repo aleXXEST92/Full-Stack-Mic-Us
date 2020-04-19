@@ -2,8 +2,7 @@ import { combineReducers } from 'redux';
 
 const artist = (state = [], action) => {
     switch(action.type) {
-        case 'ARTIST_POST':
-            console.log(action.value)
+        case 'ADD_ARTIST':
             return [ ...state, action.value ]
         default:
             return state
