@@ -20,4 +20,4 @@ const artistSchema = new Schema({
     },
 })
 
-module.exports = Item = mongoose.model("artist", artistSchema)
+module.exports = Artist = mongoose.model("artist", artistSchema)

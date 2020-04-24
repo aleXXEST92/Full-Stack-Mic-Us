@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const path = require('path')
@@ -7,6 +8,7 @@ const artists = require('./routes/api/artists')
 const app = express();
 
 app.use(bodyParser.json());
+app.use(cors)
 
 const db = require("./config/keys").mongoURI
 
