@@ -1,12 +1,14 @@
 import { connect } from 'react-redux'
 import SignUp from '../Components/SignUp'
-import { addArtist } from '../redux/action'
+import { addArtist, getArtist } from '../redux/action'
+
+
 
 
 const mapDispatchToProps = (dispatch) => {
-    console.log("signUpContainer")
     return {
-        addArtist: (index) => dispatch(addArtist(index))
+        addArtist: (index) => dispatch(addArtist(index)),
+        getArtist: () => dispatch (getArtist())
     }
 }
 

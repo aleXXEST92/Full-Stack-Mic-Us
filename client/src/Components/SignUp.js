@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import { Form, Button } from 'react-bootstrap';
-
+import { Link } from 'react-router-dom'
 
 
 class SignUp extends Component {
@@ -12,13 +12,16 @@ class SignUp extends Component {
       name: '',
       email: '',
       type: '',
-      genre: ''
+      genre: '',
+      artistArr: []
   }
   }
 
-// componentDidMount() {
-//   this.props.addArtist();
-// }
+componentDidMount() {
+  console.log(this.props.getArtist(), "artists array")
+  this.props.getArtist();
+  this.props.addArtist();
+}
 
 artistName = event => {
   const newArtist = (event.target.value);
@@ -33,6 +36,7 @@ artistEmail = event => {
 artistChange = event => {
 const newType = (event.target.value);
 this.setState({type:newType})
+console.log(newType)
 };
 
 genreChange = event => {
@@ -45,11 +49,12 @@ handleSubmit = () => {
 }
 
 
+
 render () {
 return (
 <>
-  <div className="sign">
-    <div className="signup__background-image"></div>
+  <div class="sign">
+    <div class="signup__background-image"></div>
   </div>
 
     <div className="signup-container">
@@ -92,16 +97,13 @@ return (
           </TextField>
         </div>
       </Form.Group>
-
-      <Button onClick={() => {this.handleSubmit(this.state)}} className="register-button">
-        <span>Register Now!</span>
-      </Button>
-
     </Form> 
 
-    
-       
-    
+    <Link>
+      <Button onClick={() => {this.handleSubmit(this.state)}} className="register-button">
+        <span>Register Now!</span>
+      </Button>     
+    </Link> 
       
   </div>
 </>
