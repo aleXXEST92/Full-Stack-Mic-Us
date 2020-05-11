@@ -4,7 +4,7 @@ import { Form, FormControl, Button } from 'react-bootstrap';
 
 
 const Search = (props) => {
-  console.log(props,"props in search component")
+  console.log(props)
 
     return (
         <div className="search">

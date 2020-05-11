@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import Search from '../Components/Search'
-import { addArtist } from '../redux/action'
+// import { addArtist } from '../redux/action'
 
 const mapStateToProps = (state) => {
     return {
@@ -8,10 +8,10 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        addArtist: (index) => dispatch(addArtist(index))
-    }
-}
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         addArtist: (index) => dispatch(addArtist(index))
+//     }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search)
+export default connect(mapStateToProps)(Search)

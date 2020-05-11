@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import SignUp from '../Components/SignUp'
-import { addArtist, getArtist } from '../redux/action'
+import { addArtist } from '../redux/action'
 
 
 
@@ -8,7 +8,7 @@ import { addArtist, getArtist } from '../redux/action'
 const mapDispatchToProps = (dispatch) => {
     return {
         addArtist: (index) => dispatch(addArtist(index)),
-        getArtist: () => dispatch (getArtist())
+        // getArtist: () => dispatch (getArtist())
     }
 }
 

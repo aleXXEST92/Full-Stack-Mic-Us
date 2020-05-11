@@ -4,6 +4,7 @@ import Incentives from './Incentives'
 import SignUpButton from './SignUpButton'
 
 
+
 class Dashboard extends Component {
   render () {
     return (

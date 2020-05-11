@@ -1,50 +1,49 @@
-export const addArtist = (artist) => {
-    console.log(artist, "artists")
-    return {
-        type: 'ADD_ARTIST',
-        value: artist
-    }
+// export const addArtist = (artist) => {
+//     console.log(artist, "artists")
+//     return {
+//         type: 'ADD_ARTIST',
+//         value: artist
+//     }
+// }
+
+
+import axios from 'axios'
+
+export const addArtist = (artist) => (dispatch) => {
+    axios
+        .post('http://localhost:5000/api/artists', artist)
+        .then(res => 
+            dispatch({
+                type: 'ADD_ARTIST',
+                payload: res.data
+            }))
 }
 
-export const getArtist = () => {
-    return (dispatch) => {
-        fetch("/api/artists")
-        .then (res => res.json())
-        .then (response => {
-      console.log(response, "response")
-      const action={
-        type: 'ADD_ARTIST',
-        value: response
-        }
-       return dispatch(action)
-        })
-    }
-}
 
 // export const addArtist = (artist) => {
-//     console.log(artist)
-//     return (dispatch) => {
-//         fetch("http://localhost:5000/api/artists", {
-//             method:"post",
-//             headers: {    
-//                 'Accept': 'application/json',
-//                 'Content-Type': 'application/json',
-//                 'Access-Control-Allow-Origin': '*' },
-//             mode:"cors",
-//             cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-//             credentials: 'same-origin',
-//             body:JSON.stringify({
-//                 artist:artist
-//             })
+//     console.log(artist, "artists")
+//     return {
+//         type: 'ADD_ARTIST',
+//         value: artist
+//     }
+// }
+
+// export const getArtist = () => dispatch => {
+//     dispatch(setItemsLoading())
+//     axios
+//         .get('/api/artists')
+//         .then(res => {   
+//             dispatch({
+//             type: "GET_ARTISTS",
+//             payload: res.data
 //         })
-//         .then(res => res.json())
-//         .then(response => {
-//             console.log("response", response)
-//             const action={
-//                 type: 'ADD_ARTIST',
-//                 value: response
-//             }
-//             dispatch(action)
-//         })
+//         console.log(res.data)
+//         }
+//     )
+// }
+
+// export const setItemsLoading = () => {
+//     return {
+//         type: "ITEMS_LOADING"
 //     }
 // }

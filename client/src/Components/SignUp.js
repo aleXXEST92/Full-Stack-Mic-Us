@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import { Form, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom'
+import { connect } from "react-redux"
+import { addArtist } from "../redux/action"
+
 
 
 class SignUp extends Component {
@@ -17,37 +19,42 @@ class SignUp extends Component {
   }
   }
 
-componentDidMount() {
-  console.log(this.props.getArtist(), "artists array")
-  this.props.getArtist();
-  this.props.addArtist();
-}
+// componentDidMount() {
+//   this.props.addArtist();
+// }
 
 artistName = event => {
-  const newArtist = (event.target.value);
+  const newArtist = event.target.value;
   this.setState({name:newArtist})
 }
 
 artistEmail = event => {
-  const newEmail = (event.target.value);
+  const newEmail = event.target.value;
   this.setState({email:newEmail})
 }
 
 artistChange = event => {
-const newType = (event.target.value);
+const newType = event.target.value;
 this.setState({type:newType})
 console.log(newType)
 };
 
 genreChange = event => {
-const newGenre = (event.target.value);
+const newGenre = event.target.value;
 this.setState({genre:newGenre})
 }
 
-handleSubmit = () => {
-  this.props.addArtist(this.state)
-}
+handleSubmit = (e) => {
+  e.preventDefault()
 
+  const addNewArtist = {
+      name: this.state.name,
+      email: this.state.email,
+      type: this.state.type,
+      genre: this.state.genre,
+  }
+  this.props.addArtist(addNewArtist)
+}
 
 
 render () {
@@ -60,7 +67,7 @@ return (
     <div className="signup-container">
         <h2 className="signup-header">MicUS Sign Up</h2>
 
-    <Form className="signup-form">
+    <Form className="signup-form" onSubmit={this.handleSubmit}>
       <Form.Group>
         <Form.Control 
         className="style" 
@@ -97,17 +104,18 @@ return (
           </TextField>
         </div>
       </Form.Group>
-    </Form> 
 
-    <Link>
-      <Button onClick={() => {this.handleSubmit(this.state)}} className="register-button">
-        <span>Register Now!</span>
-      </Button>     
-    </Link> 
-      
+      <Button onClick={this.handleSubmit} className="register-button">
+        Register Now!
+      </Button> 
+    </Form>     
   </div>
 </>
     )
   }
 }
-export default SignUp;
+  const mapStateToProps = state => ({
+    artists: state.artists
+})
+
+export default connect(mapStateToProps, { addArtist })(SignUp)
