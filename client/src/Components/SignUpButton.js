@@ -2,16 +2,6 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
-import axios from "axios"
-
-const renderArtist = () => {
-    axios
-        .get('/api/artists')
-        .then(res => {   
-        console.log(res.data)
-        }
-    )
-  }
 
 
 const SignUpButton = () => {
@@ -24,11 +14,6 @@ const SignUpButton = () => {
                   <span>Sign Up!</span>
                 </Button>   
             </Link> 
-
-            <Button onClick={renderArtist()}>
-                    get artists
-                </Button>
-
         </div>
         </>
     )
