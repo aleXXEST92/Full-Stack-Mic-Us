@@ -13,7 +13,7 @@ const Navigation = () => {
             <Navbar.Brand href="#home">
                 <h1><b>mic</b><i>US</i></h1>
             </Navbar.Brand>
-            <div className="slide">Promote Yourself, Or We Will!</div>
+            <div className="slide">Promote Yourself, and We Can Help!</div>
                 <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
                         <ul className="list">
