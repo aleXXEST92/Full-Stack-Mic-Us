@@ -36,7 +36,6 @@ artistEmail = event => {
 artistChange = event => {
 const newType = event.target.value;
 this.setState({type:newType})
-console.log(newType)
 };
 
 genreChange = event => {
