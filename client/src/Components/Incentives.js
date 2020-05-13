@@ -9,6 +9,8 @@ const Incentives = () => {
             <ul>
                  <li>Be Discovered</li>
                  <li>Free Investment</li>
+                 <li>Free Investment</li>
+                 <li>Free Investment</li>
                  <li></li>
              </ul>
       </div>
