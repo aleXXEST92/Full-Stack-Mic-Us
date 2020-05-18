@@ -5,7 +5,7 @@ import axios from "axios"
 
 const renderArtist = () => {
     axios
-        .get('http://localhost:5000/api/artists')
+        .get('https://guarded-dawn-55624.herokuapp.com/api/artists')
         .then(res => {   
         console.log(res.data)
         }

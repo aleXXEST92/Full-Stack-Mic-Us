@@ -11,7 +11,7 @@ import axios from 'axios'
 
 export const addArtist = (artist) => (dispatch) => {
     axios
-        .post('http://localhost:5000/api/artists', artist)
+        .post('https://guarded-dawn-55624.herokuapp.com/api/artists', artist)
         .then(res => 
             dispatch({
                 type: 'ADD_ARTIST',
