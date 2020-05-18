@@ -10,6 +10,7 @@ class Home extends Component {
         <div className="home">
           <div className="home__background-image"></div>
         </div>
+        
           <Search/>
       </>
     );
